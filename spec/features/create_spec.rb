@@ -10,7 +10,7 @@ RSpec.describe 'user creation' do
       expect(find('form')).to have_content('Name')
       expect(find('form')).to have_content('Email')
       expect(find('form')).to have_content('Password')
-      expect(find('form')).to have_content('Confirm Password')
+      expect(find('form')).to have_content('Confirm password')
       expect(page).to have_button('Create New User')
     end
 
