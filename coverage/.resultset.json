@@ -17,8 +17,8 @@
           null,
           null,
           1,
-          0,
-          0,
+          1,
+          1,
           null,
           null,
           1,
@@ -51,6 +51,17 @@
           null,
           null,
           1,
+          null,
+          null,
+          1,
+          1,
+          1,
+          1,
+          1,
+          null,
+          0,
+          0,
+          null,
           null,
           null,
           null,
@@ -103,33 +114,29 @@
           null
         ]
       },
-      "/Users/bryce.simonds/Desktop/turing/3Module/week_3_challenges/viewing_party_lite/app/mailers/application_mailer.rb": {
-        "lines": [
-          0,
-          0,
-          0,
-          0
-        ],
-        "branches": {
-        }
-      },
       "/Users/bryce.simonds/Desktop/turing/3Module/week_3_challenges/viewing_party_lite/app/models/party_user.rb": {
         "lines": [
-          0,
-          0,
-          0,
-          0
-        ],
-        "branches": {
-        }
+          1,
+          1,
+          1,
+          null
+        ]
       },
       "/Users/bryce.simonds/Desktop/turing/3Module/week_3_challenges/viewing_party_lite/app/models/viewing_party.rb": {
         "lines": [
-          0,
-          0,
-          0,
-          0,
+          1,
+          1,
+          1,
+          1,
           null,
+          1,
+          1,
+          null
+        ]
+      },
+      "/Users/bryce.simonds/Desktop/turing/3Module/week_3_challenges/viewing_party_lite/app/mailers/application_mailer.rb": {
+        "lines": [
+          0,
           0,
           0,
           0
@@ -408,6 +415,6 @@
         }
       }
     },
-    "timestamp": 1662496655
+    "timestamp": 1662497695
   }
 }

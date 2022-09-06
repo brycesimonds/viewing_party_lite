@@ -11,7 +11,7 @@ RSpec.describe 'user dashboard page' do
       expect(page).to have_button('Log In')
   end
 
-  it "has a email and password field" do
+  it "valid credentials bring the user to their dashboard" do
       visit "/login"
       user = User.create!(
         name: 'Bryce', 
