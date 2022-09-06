@@ -3,8 +3,8 @@ require 'faker'
 
 RSpec.describe 'user creation' do
   it 'renders the new form', :vcr do 
-    user1 = User.create!(name: Faker::Name.first_name, email: Faker::Internet.email)
-    user2 = User.create!(name: Faker::Name.first_name, email: Faker::Internet.email)
+    user1 = User.create!(name: Faker::Name.first_name, email: Faker::Internet.email, password: "test123")
+    user2 = User.create!(name: Faker::Name.first_name, email: Faker::Internet.email, password: "test123")
 
     #This 320288 represents a movie_id
     visit "/users/#{user1.id}/movies/320288/viewing-party/new"
@@ -29,8 +29,8 @@ RSpec.describe 'user creation' do
   end
 
   xit 'redirects user to user dashboard and shows viewing party as hosted', :vcr do 
-    user1 = User.create!(name: Faker::Name.first_name, email: Faker::Internet.email)
-    user2 = User.create!(name: Faker::Name.first_name, email: Faker::Internet.email)
+    user1 = User.create!(name: Faker::Name.first_name, email: Faker::Internet.email, password: "test123")
+    user2 = User.create!(name: Faker::Name.first_name, email: Faker::Internet.email, password: "test123")
 
     #This 320288 represents a movie_id
     visit "/users/#{user1.id}/movies/320288/viewing-party/new"

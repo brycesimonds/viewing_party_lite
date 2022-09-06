@@ -1,4 +1,6 @@
 class UsersController < ApplicationController
+  include BCrypt
+
   def new
     @user = User.new
   end
@@ -10,7 +12,6 @@ class UsersController < ApplicationController
 
   def create
     user = User.new(user_params)
-    binding.pry
     if user.save
       redirect_to "/users/#{user.id}"
     else
@@ -32,6 +33,15 @@ class UsersController < ApplicationController
   def discover
     @user = User.find(params[:id])
   end
+
+  # def password
+  #   @password ||= Password.new(password_digest)
+  # end
+
+  # def password=(new_password)
+  #   @password = Password.create(new_password)
+  #   self.password_digest = @password
+  # end
 
   private 
   def user_params

@@ -32,6 +32,8 @@ RSpec.describe 'user creation' do
 
       fill_in 'Name', with: ""
       fill_in 'Email', with: Faker::Internet.email
+      fill_in 'Password', with: "test123"
+      fill_in 'Confirm password', with: "test123"
 
       click_button 'Create New User'
 
@@ -40,6 +42,8 @@ RSpec.describe 'user creation' do
 
       fill_in 'Name', with: Faker::Name.name
       fill_in 'Email', with: ""
+      fill_in 'Password', with: "test123"
+      fill_in 'Confirm password', with: "test123"
 
       click_button 'Create New User'
 
@@ -48,6 +52,8 @@ RSpec.describe 'user creation' do
 
       fill_in 'Name', with: Faker::Name.name
       fill_in 'Email', with: "abc@yahoo.com"
+      fill_in 'Password', with: "test123"
+      fill_in 'Confirm password', with: "test123"
 
       click_button 'Create New User'
 
@@ -55,6 +61,8 @@ RSpec.describe 'user creation' do
 
       fill_in 'Name', with: Faker::Name.name
       fill_in 'Email', with: "abc@yahoo.com"
+      fill_in 'Password', with: "test123"
+      fill_in 'Confirm password', with: "test123"
 
       click_button 'Create New User'
 
