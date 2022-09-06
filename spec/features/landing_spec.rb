@@ -49,5 +49,15 @@ RSpec.describe 'landing page' do
       click_link('Home')
       expect(current_path).to eq('/')
     end
+    
+    it 'has a link for a log in' do 
+      visit '/' 
+
+      expect(page).to have_link("Log In")
+
+      click_link "Log In"
+
+      expect(current_path).to eq('/login')
+    end
   end
 end
