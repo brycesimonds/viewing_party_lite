@@ -81,6 +81,28 @@
           null
         ]
       },
+      "/Users/bryce.simonds/Desktop/turing/3Module/week_3_challenges/viewing_party_lite/app/models/user.rb": {
+        "lines": [
+          1,
+          1,
+          1,
+          1,
+          1,
+          null,
+          1,
+          1,
+          null,
+          1,
+          null
+        ]
+      },
+      "/Users/bryce.simonds/Desktop/turing/3Module/week_3_challenges/viewing_party_lite/app/models/application_record.rb": {
+        "lines": [
+          1,
+          1,
+          null
+        ]
+      },
       "/Users/bryce.simonds/Desktop/turing/3Module/week_3_challenges/viewing_party_lite/app/mailers/application_mailer.rb": {
         "lines": [
           0,
@@ -109,32 +131,6 @@
           0,
           null,
           0,
-          0,
-          0
-        ],
-        "branches": {
-        }
-      },
-      "/Users/bryce.simonds/Desktop/turing/3Module/week_3_challenges/viewing_party_lite/app/models/application_record.rb": {
-        "lines": [
-          0,
-          0,
-          0
-        ],
-        "branches": {
-        }
-      },
-      "/Users/bryce.simonds/Desktop/turing/3Module/week_3_challenges/viewing_party_lite/app/models/user.rb": {
-        "lines": [
-          0,
-          0,
-          0,
-          0,
-          0,
-          null,
-          0,
-          0,
-          null,
           0,
           0
         ],
@@ -412,6 +408,6 @@
         }
       }
     },
-    "timestamp": 1662496441
+    "timestamp": 1662496655
   }
 }

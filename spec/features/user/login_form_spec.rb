@@ -10,4 +10,19 @@ RSpec.describe 'user dashboard page' do
 
       expect(page).to have_button('Log In')
   end
+
+  it "has a email and password field" do
+      visit "/login"
+      user = User.create!(
+        name: 'Bryce', 
+        email: 'herewego@yahoo.com', 
+        password: "test123")
+
+      fill_in 'Email', with: "herewego@yahoo.com"
+      fill_in 'Password', with: "test123"
+
+      click_button 'Log In'
+
+      expect(page).to have_current_path("/users/#{User.last.id}")
+  end
 end 
