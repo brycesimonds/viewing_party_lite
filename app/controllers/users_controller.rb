@@ -11,13 +11,18 @@ class UsersController < ApplicationController
   end
 
   def create
-    user = User.new(user_params)
-    if user.save
-      redirect_to "/users/#{user.id}"
+    if params[:user][:password] == params[:user][:confirm_password]
+      user = User.new(user_params)
+      if user.save
+        redirect_to "/users/#{user.id}"
+      else
+        redirect_to "/register"
+        flash[:alert] = "Error: #{error_message(user.errors)}"
+      end
     else
       redirect_to "/register"
-      flash[:alert] = "Error: #{error_message(user.errors)}"
-    end
+      flash[:alert] = "Your passwords did not match. Please try again."
+    end 
   end
 
   def movie

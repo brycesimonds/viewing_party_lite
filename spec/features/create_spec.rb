@@ -68,7 +68,7 @@ RSpec.describe 'user creation' do
 
       expect(page).to have_content("Error: Email has already been taken")
     end
-    
+
     it 'gives an error if your password dont match' do
       visit "/register"
 
@@ -79,7 +79,7 @@ RSpec.describe 'user creation' do
 
       click_button 'Create New User'
 
-      expect(page).to have_content("Error: You suck your password don't match")
+      expect(page).to have_content("Your passwords did not match. Please try again.")
     end
   end
 end 
