@@ -39,6 +39,9 @@ class UsersController < ApplicationController
     @user = User.find(params[:id])
   end
 
+  def login_form
+  end
+
   # def password
   #   @password ||= Password.new(password_digest)
   # end
