@@ -48,7 +48,7 @@ class UsersController < ApplicationController
       redirect_to "/users/#{user.id}"
       flash[:success] = 'Welcome back!'
     else 
-      render login_path
+      redirect_to '/login'
       flash[:alert] = 'Invalid credentials'
     end
   end

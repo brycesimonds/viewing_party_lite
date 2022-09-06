@@ -22,7 +22,23 @@ RSpec.describe 'user dashboard page' do
       fill_in 'Password', with: "test123"
 
       click_button 'Log In'
-
+ 
       expect(page).to have_current_path("/users/#{User.last.id}")
+  end
+
+  it "invalid credentials bring the user to the login page " do
+      visit "/login"
+      user = User.create!(
+        name: 'Bryce', 
+        email: 'herewego@yahoo.com', 
+        password: "test123")
+
+      fill_in 'Email', with: "herewego@yahoo.com"
+      fill_in 'Password', with: "test123"
+
+      click_button 'Log In'
+
+      expect(current_path).to eq("/login")
+      expect(page).to have_content("Invalid credentials")
   end
 end 
