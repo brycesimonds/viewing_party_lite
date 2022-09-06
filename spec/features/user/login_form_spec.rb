@@ -34,7 +34,7 @@ RSpec.describe 'user dashboard page' do
         password: "test123")
 
       fill_in 'Email', with: "herewego@yahoo.com"
-      fill_in 'Password', with: "test123"
+      fill_in 'Password', with: "YEAHRIGHTYO"
 
       click_button 'Log In'
 
