@@ -18,8 +18,8 @@ RSpec.describe 'landing page' do
     end
 
     it "displays existing user emails only" do
-      user1 = User.create!(name: 'Hai Sall', email: 'shoe_eater@payless.com')
-      user2 = User.create!(name: 'Sryce Bimmons', email: 'valhiemhero@hotmail.com')
+      user1 = User.create!(name: 'Hai Sall', email: 'shoe_eater@payless.com', password: "test123")
+      user2 = User.create!(name: 'Sryce Bimmons', email: 'valhiemhero@hotmail.com', password: "test123")
 
       visit '/'
 
@@ -30,8 +30,8 @@ RSpec.describe 'landing page' do
     end
 
     it "links existing users to the user dashboard" do
-      user1 = User.create!(name: 'Hai Sall', email: 'shoe_eater@payless.com')
-      user2 = User.create!(name: 'Sryce Bimmons', email: 'valhiemhero@hotmail.com')
+      user1 = User.create!(name: 'Hai Sall', email: 'shoe_eater@payless.com', password: "test123")
+      user2 = User.create!(name: 'Sryce Bimmons', email: 'valhiemhero@hotmail.com', password: "test123")
 
       visit '/'
       click_link("shoe_eater@payless.com's Dashboard")
@@ -48,6 +48,16 @@ RSpec.describe 'landing page' do
       expect(page).to have_link('Home')
       click_link('Home')
       expect(current_path).to eq('/')
+    end
+    
+    it 'has a link for a log in' do 
+      visit '/' 
+
+      expect(page).to have_link("Log In")
+
+      click_link "Log In"
+
+      expect(current_path).to eq('/login')
     end
   end
 end

@@ -1,5 +1,8 @@
 class UsersController < ApplicationController
+  include BCrypt
+
   def new
+    @user = User.new
   end
 
   def show
@@ -8,13 +11,18 @@ class UsersController < ApplicationController
   end
 
   def create
-    user = User.new(name: params[:name], email: params[:email])
-    if user.save
-      redirect_to "/users/#{user.id}"
+    if params[:user][:password] == params[:user][:confirm_password]
+      user = User.new(user_params)
+      if user.save
+        redirect_to "/users/#{user.id}"
+      else
+        redirect_to "/register"
+        flash[:alert] = "Error: #{error_message(user.errors)}"
+      end
     else
       redirect_to "/register"
-      flash[:alert] = "Error: #{error_message(user.errors)}"
-    end
+      flash[:alert] = "Your passwords did not match. Please try again."
+    end 
   end
 
   def movie
@@ -29,5 +37,24 @@ class UsersController < ApplicationController
 
   def discover
     @user = User.find(params[:id])
+  end
+
+  def login_form
+  end
+
+  def login_user
+    user = User.find_by("email = ?", params[:email])
+    if user && user.authenticate(params[:password])
+      redirect_to "/users/#{user.id}"
+      flash[:success] = 'Welcome back!'
+    else 
+      redirect_to '/login'
+      flash[:alert] = 'Invalid credentials'
+    end
+  end
+
+  private 
+  def user_params
+    params.require(:user).permit(:name, :email, :password)
   end
 end
