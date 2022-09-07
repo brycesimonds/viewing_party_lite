@@ -1,8 +1,9 @@
 Rails.application.routes.draw do
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
   get '/', to: 'landing#index'
-  get 'login', to: 'users#login_form'
-  post 'login', to: 'users#login_user'
+  get '/login', to: 'users#login_form'
+  post '/login', to: 'users#login_user'
+  delete '/logout', to: 'users#destory'
 
   get '/users/:id/movies/:movie_id', to: 'movies#show'
 

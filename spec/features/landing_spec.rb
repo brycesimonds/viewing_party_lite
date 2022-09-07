@@ -59,5 +59,55 @@ RSpec.describe 'landing page' do
 
       expect(current_path).to eq('/login')
     end
+
+    it 'does not show a link to log in or creat an account if the user is logged in' do
+      user = User.create!(name: 'Hai Sall', email: 'shoe_eater@payless.com', password: "test123")
+      visit '/login' 
+
+      fill_in :email, with: user.email
+      fill_in :password, with: user.password
+      click_button 'Log In'
+
+      visit '/'
+
+      expect(page).to_not have_link("Log In")
+      expect(page).to_not have_link("Create a New User")
+    end
+
+    it 'as a signed in user it shows the log out link' do
+      user = User.create!(name: 'Hai Sall', email: 'shoe_eater@payless.com', password: "test123")
+      visit '/login' 
+
+      fill_in :email, with: user.email
+      fill_in :password, with: user.password
+      click_button 'Log In'
+
+      visit '/'
+
+      expect(page).to have_link("Log Out")
+    end
+
+    it 'clicking sign out brings user to landing page and there is a log in link' do
+      user = User.create!(name: 'Hai Sall', email: 'shoe_eater@payless.com', password: "test123")
+      visit '/login' 
+
+      fill_in :email, with: user.email
+      fill_in :password, with: user.password
+      click_button 'Log In'
+
+      visit '/'
+
+      click_link 'Log Out'
+   
+      expect(page).to have_link("Log In")
+    end
+
+    it 'throws an error if a user tried to access the dashboard without being logged in' do
+      user = User.create!(name: 'Hai Sall', email: 'shoe_eater@payless.com', password: "test123")
+
+      visit '/'
+      click_on "#{user.email}'s Dashboard"
+      expect(page).to have_content("ERROR")
+    end
   end
 end

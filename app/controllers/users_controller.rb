@@ -14,6 +14,7 @@ class UsersController < ApplicationController
     if params[:user][:password] == params[:user][:confirm_password]
       user = User.new(user_params)
       if user.save
+        session[:user_id] = user.id
         redirect_to "/users/#{user.id}"
       else
         redirect_to "/register"
@@ -45,12 +46,18 @@ class UsersController < ApplicationController
   def login_user
     user = User.find_by("email = ?", params[:email])
     if user && user.authenticate(params[:password])
+      session[:user_id] = user.id
       redirect_to "/users/#{user.id}"
       flash[:success] = 'Welcome back!'
     else 
       redirect_to '/login'
       flash[:alert] = 'Invalid credentials'
     end
+  end
+
+  def destory
+    session.destroy
+    redirect_to '/'
   end
 
   private 
