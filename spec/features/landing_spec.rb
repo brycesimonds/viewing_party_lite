@@ -101,5 +101,13 @@ RSpec.describe 'landing page' do
    
       expect(page).to have_link("Log In")
     end
+
+    it 'throws an error if a user tried to access the dashboard without being logged in' do
+      user = User.create!(name: 'Hai Sall', email: 'shoe_eater@payless.com', password: "test123")
+
+      visit '/'
+      click_on "#{user.email}'s Dashboard"
+      expect(page).to have_content("ERROR")
+    end
   end
 end

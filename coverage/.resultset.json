@@ -29,6 +29,28 @@
           null
         ]
       },
+      "/Users/bryce.simonds/Desktop/turing/3Module/week_3_challenges/viewing_party_lite/app/controllers/landing_controller.rb": {
+        "lines": [
+          1,
+          null,
+          1,
+          1,
+          null,
+          null
+        ]
+      },
+      "/Users/bryce.simonds/Desktop/turing/3Module/week_3_challenges/viewing_party_lite/app/controllers/application_controller.rb": {
+        "lines": [
+          1,
+          null,
+          1,
+          null,
+          1,
+          0,
+          null,
+          null
+        ]
+      },
       "/Users/bryce.simonds/Desktop/turing/3Module/week_3_challenges/viewing_party_lite/app/controllers/users_controller.rb": {
         "lines": [
           1,
@@ -77,11 +99,11 @@
           null,
           null,
           1,
-          1,
-          1,
-          1,
-          1,
-          1,
+          0,
+          0,
+          0,
+          0,
+          0,
           null,
           0,
           0,
@@ -89,23 +111,11 @@
           null,
           null,
           1,
-          1,
-          1,
-          null,
-          null,
-          1,
-          1,
+          0,
           0,
           null,
-          null
-        ]
-      },
-      "/Users/bryce.simonds/Desktop/turing/3Module/week_3_challenges/viewing_party_lite/app/controllers/application_controller.rb": {
-        "lines": [
-          1,
           null,
           1,
-          null,
           1,
           0,
           null,
@@ -129,16 +139,6 @@
           null,
           1,
           1,
-          null
-        ]
-      },
-      "/Users/bryce.simonds/Desktop/turing/3Module/week_3_challenges/viewing_party_lite/app/controllers/landing_controller.rb": {
-        "lines": [
-          1,
-          null,
-          1,
-          2,
-          null,
           null
         ]
       },
@@ -411,6 +411,6 @@
         }
       }
     },
-    "timestamp": 1662591279
+    "timestamp": 1662591601
   }
 }
